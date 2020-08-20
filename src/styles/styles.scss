@@ -1,0 +1,17 @@
+@import "./abstract/mixins";
+@import "./abstract/variables";
+
+@import "./base/base";
+
+@import "./components/button";
+@import "./components/course-card";
+@import "./components/navigation";
+@import "./components/quiz";
+
+@import "./pages/about-us";
+@import "./pages/admin-page";
+@import "./pages/auth-page";
+@import "./pages/course-page";
+@import "./pages/home";
+@import "./pages/overview-page";
+@import "./pages/user-page";

@@ -1,0 +1,112 @@
+.quiz {
+  &-section {
+    padding: 5rem;
+  }
+  &__start {
+    text-align: center;
+    padding: 7rem 1rem;
+    h2 {
+      font-size: 4rem;
+      font-weight: 500;
+      color: rgba(#1e1e1e, 0.88);
+    }
+
+    p {
+      font-size: 1.8rem;
+      color: rgba(black, 0.58);
+    }
+  }
+  &__finish {
+    text-align: center;
+    padding: 7rem 1rem;
+    img {
+      width: 20rem;
+    }
+    h2 {
+      font-size: 4rem;
+      color: rgba(#1e1e1e, 0.88);
+    }
+    &--total {
+      font-size: 3rem;
+      color: rgba(black, 0.58);
+    }
+    &--ans {
+      font-size: 2.4rem;
+      color: rgba(black, 0.83);
+    }
+  }
+  &__question {
+    &-text {
+      display: flex;
+      h3 {
+        font-size: 2.4rem;
+        color: #1e1e1e;
+        height: 100%;
+        display: inline-block;
+
+        &:first-child {
+          width: 7%;
+        }
+      }
+    }
+    &-wrg-txt {
+      font-size: 2rem;
+      color: #EB5757;
+      padding-left: 4rem;
+    }
+    &-crt-txt {
+      font-size: 2rem;
+      color: #509F99;
+      padding-left: 4rem;
+    }
+    &-options {
+      border-top: 1px solid rgba(#000000, 0.1);
+      margin-top: 6rem;
+      padding-top: 4rem;
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        display: flex;
+        margin-bottom: 2rem;
+        p {
+          font-size: 2.2rem;
+          color: #1e1e1e;
+          font-weight: 500;
+          width: 5%;
+          text-transform: uppercase;
+        }
+
+        button {
+          background: transparent;
+          border: 2px solid #c4c4c4;
+          border-radius: 7px;
+          flex: 1;
+          text-align: left;
+          font-size: 2rem;
+          color: rgba(black, 0.58);
+          display: flex;
+          align-items: center;
+          text-transform: capitalize;
+
+          &:focus {
+            outline: none;
+          }
+
+          span {
+            width: 1.8rem;
+            height: 1.8rem;
+            border-radius: 50%;
+            border: 2px solid #c4c4c4;
+            display: inline-block;
+            margin-left: 2rem;
+            margin-right: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

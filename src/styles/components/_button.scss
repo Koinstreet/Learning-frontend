@@ -1,0 +1,26 @@
+.button {
+  background: $color-primary;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  color: #000;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+  display: inline-block;
+  border: none;
+  transition: background 0.3s;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background: darken($color: $color-primary, $amount: 7);
+  }
+
+  svg {
+    margin-left: 1.5rem;
+  }
+}

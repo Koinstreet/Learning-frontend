@@ -1,0 +1,95 @@
+.course-section {
+  width: 100%;
+  background-color: #f4f6f7;
+
+  &__top {
+    background-color: $color-secondary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    padding-top: 10rem;
+    padding-bottom: 3rem;
+    h2 {
+      font-size: 4rem;
+      font-weight: 300;
+      color: #ffffff;
+    }
+
+    h3 {
+      color: #ffffff;
+    }
+
+    &-progress {
+      font-weight: 300;
+      margin-top: 2rem;
+      p {
+        font-size: 2rem;
+        color: $color-primary;
+      }
+    }
+
+    .react-sweet-progress-symbol {
+      color: #fff;
+      font-size: 2rem;
+    }
+  }
+
+  &__modules {
+    margin-top: 5rem;
+
+    &-container {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
+  &__navigation {
+    margin-right: 4rem;
+    flex-basis: 20%;
+    position: sticky;
+    top: 12rem;
+    h4 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #1e1e1e;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      font-size: 1.8rem;
+      color: rgba(0, 0, 0, 0.5);
+      margin: 1rem 0;
+      display: inline-block;
+      font-weight: 500;
+
+      &.--viewed {
+        color: #509F99;
+      }
+    }
+
+    &--active {
+        color: $color-primary;
+    }
+  }
+
+  &__item {
+    flex: 1;
+    padding-bottom: 4rem;
+    margin-bottom: 6rem;
+    box-shadow: 0 0.25rem 1.5rem 0.25rem rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+
+    &-btns {
+      width: 100%;
+      justify-content: space-between;
+      display: flex;
+      padding: 3rem;
+    }
+  }
+}
