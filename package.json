@@ -46,6 +46,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
+    "heroku-postbuild": "npm install --production",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
