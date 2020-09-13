@@ -1,1 +1,1 @@
-export const COURSE_URL = "http://localhost:5000/api/v1/course";
+export const COURSE_URL = `${process.env.REACT_APP_API_URL}/course`;
