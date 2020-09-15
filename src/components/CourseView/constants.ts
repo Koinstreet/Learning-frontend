@@ -1,1 +1,1 @@
-export const COURSE_URL = `${process.env.REACT_APP_API_URL}/course`;
+export const COURSE_URL = `${process.env.REACT_APP_API_URL}/course`
