@@ -6,8 +6,8 @@ const TotalInfo: React.FC = () => {
     <section className="total-info">
       <div className="container">
         <div className="row">
-          <div className="col-md-4">
-            <div className="total-info__item">
+          <div className="col-lg-4 d-flex justify-content-center">
+            <div className="total-info__item py-2">
               <Icons.OnlineCourseIcon />
               <div className="total-info__desc">
                 <h4>100,000 online courses</h4>
@@ -15,8 +15,8 @@ const TotalInfo: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-4">
-            <div className="total-info__item">
+          <div className="col-lg-4 d-flex justify-content-center">
+            <div className="total-info__item py-2">
               <Icons.EducationIcon />
               <div className="total-info__desc">
                 <h4>Expert instruction</h4>
@@ -24,8 +24,8 @@ const TotalInfo: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-4">
-            <div className="total-info__item">
+          <div className="col-lg-4 d-flex justify-content-center">
+            <div className="total-info__item py-2">
               <Icons.ReactIcon />
               <div className="total-info__desc">
                 <h4>Lifetime access</h4>

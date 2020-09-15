@@ -12,7 +12,7 @@ const SectionInfo = (props) => {
   return (
     <div className="container h-100">
       <div className="row h-100 align-items-center pt-5">
-        <div className="col-md-6">
+        <div className="col-md-6 py-5">
           <div className="h-100">
             <div className="overview-top__desc mb-5">
               <h1>{props.courseName}</h1>

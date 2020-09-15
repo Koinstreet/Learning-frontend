@@ -47,7 +47,7 @@ const Signin = () => {
     <section className="auth-page">
       <div className="auth-page__container">
         <div className="row align-items-start">
-          <div className="col">
+          <div className="col-md-6">
             <h1 className="auth-page__signinHead">
               Sign In to your Learning Site
             </h1>
@@ -55,7 +55,7 @@ const Signin = () => {
               or <Link to="/signup">create a new account</Link>
             </p>
           </div>
-          <div className="col">
+          <div className="col-md-6">
             <form className="auth-page__form">
               <div className="row">
                 <div className="col">

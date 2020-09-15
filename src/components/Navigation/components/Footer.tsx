@@ -11,18 +11,18 @@ const Footer = () => {
       <div className="footer">
         <div className="container">
           <ul className="row footer__list">
-            <li className="col-md-3 footer__item">
+            <li className="col-3 footer__item">
               <Link to="/">
                 <img src={logo} alt="koinstreet" />
               </Link>
             </li>
-            <li className="col-md-3 footer__item">
+            <li className="col-3 footer__item">
               <Link to="/">Home</Link>
             </li>
-            <li className="col-md-3 footer__item">
+            <li className="col-3 footer__item">
               <Link to="/about-us">About Us</Link>
             </li>
-            <li className="col-md-3 footer__item">
+            <li className="col-3 footer__item">
               <span className="socials">
                 <img src={facebook} alt="facebook" />
                 <img src={twitter} alt="twitter" />
