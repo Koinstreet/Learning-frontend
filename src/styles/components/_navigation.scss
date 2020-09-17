@@ -11,6 +11,10 @@
   transition: all 0.3s;
 
   &__burger {
+    display: none;
+    @media only screen and (max-width: 680px) {
+      display: flex;
+    }
     position: absolute;
     top: 10rem;
     left: 0;
@@ -19,9 +23,35 @@
     background: #fff;
     opacity: 0.75;
     border-radius: 0 3px 3px 0;
-    display: flex;
     justify-content: center;
     align-items: center;
+  }
+  &__backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    @media only screen and (max-width: 680px) {
+      &.--active {
+        display: block;
+      }
+    }
+  }
+
+  &__cancel {
+    display: none;
+    @media only screen and (max-width: 680px) {
+      display: block;
+      text-align: right;
+      padding: 2rem 3rem;
+      img {
+        width: 3rem !important;
+      }
+    }
   }
 
   ul.navigation__wrapper {
@@ -32,10 +62,12 @@
       top: 0;
       left: 0;
       height: 100vh;
-      width: 50%;
+      width: 70%;
       flex-direction: column;
       background: #fff;
-      padding-top: 5rem;
+      // padding-top: 5rem;
+      transition: all 0.2s;
+      z-index: 11;
       &.--active {
         transform: translateX(0);
       }

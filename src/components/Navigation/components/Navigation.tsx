@@ -5,6 +5,7 @@ import { UserOutlined } from "@ant-design/icons";
 import { Slider } from 'react-burgers';
 
 import logo from "../../../assets/images/logo.png";
+import cancel from "../../../assets/icons/cancel.svg";
 import logoblue from "../../../assets/images/logoblue.png";
 
 const Navigation: React.FC = () => {
@@ -53,6 +54,7 @@ const Navigation: React.FC = () => {
 
   return (
     <nav className={`navigation ${!isPageTop ? "--active" : null}`}>
+      <div className={`navigation__backdrop ${isNavActive && "--active"}`} onClick={toggleNavActive}></div>
       <div className="navigation__burger" onClick={toggleNavActive}>
       <Slider padding='0' active={isNavActive}/>
       </div>
@@ -64,14 +66,17 @@ const Navigation: React.FC = () => {
         </li>
         <li>
           <ul className={`navigation__wrapper ${isNavActive && "--active"}`}>
+            <div className="navigation__cancel">
+              <img src={cancel}  alt="cancel" onClick={toggleNavActive} />
+            </div>
             <li>
-              <NavLink to="/">Courses</NavLink>
+              <NavLink to="/" onClick={() => setIsNavActive(false)}>Courses</NavLink>
             </li>
             <li>
-              <NavLink to="/about-us">About Us</NavLink>
+              <NavLink to="/about-us" onClick={() => setIsNavActive(false)}>About Us</NavLink>
             </li>
             <li>
-              <NavLink to="/contact-us">Contact Us</NavLink>
+              <NavLink to="/contact-us" onClick={() => setIsNavActive(false)}>Contact Us</NavLink>
             </li>
           </ul>
         </li>
