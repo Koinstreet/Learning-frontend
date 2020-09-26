@@ -2,7 +2,7 @@ import React, { useEffect, useState, Fragment } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { UserOutlined } from "@ant-design/icons";
-import { Slider } from 'react-burgers';
+import { Slider } from "react-burgers";
 
 import logo from "../../../assets/images/logo.png";
 import cancel from "../../../assets/icons/cancel.svg";
@@ -14,8 +14,8 @@ const Navigation: React.FC = () => {
   const { isAuthenticated } = useSelector((state) => state.auth);
 
   const toggleNavActive = () => {
-    setIsNavActive(!isNavActive)
-  }
+    setIsNavActive(!isNavActive);
+  };
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
@@ -54,11 +54,17 @@ const Navigation: React.FC = () => {
 
   return (
     <nav className={`navigation ${!isPageTop ? "--active" : null}`}>
-      <div className={`navigation__backdrop ${isNavActive && "--active"}`} onClick={toggleNavActive}></div>
-      <div className="navigation__burger" onClick={toggleNavActive}>
-      <Slider padding='0' active={isNavActive}/>
-      </div>
+      <div
+        className={`navigation__backdrop ${isNavActive && "--active"}`}
+        onClick={toggleNavActive}
+      ></div>
+      {/* <div className="navigation__burger" onClick={toggleNavActive}>
+        <Slider padding="0" active={isNavActive} />
+      </div> */}
       <ul>
+        <li className="navigation__burger" onClick={toggleNavActive}>
+          <Slider padding="0" active={isNavActive} color={isPageTop ? "#eee" : '#1e1e1e' } width={30} lineHeight={2} />
+        </li>
         <li>
           <NavLink to="/">
             <img src={isPageTop ? logo : logoblue} alt="Koinstreet" />
@@ -67,16 +73,22 @@ const Navigation: React.FC = () => {
         <li>
           <ul className={`navigation__wrapper ${isNavActive && "--active"}`}>
             <div className="navigation__cancel">
-              <img src={cancel}  alt="cancel" onClick={toggleNavActive} />
+              <img src={cancel} alt="cancel" onClick={toggleNavActive} />
             </div>
             <li>
-              <NavLink to="/" onClick={() => setIsNavActive(false)}>Courses</NavLink>
+              <NavLink to="/" onClick={() => setIsNavActive(false)}>
+                Courses
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/about-us" onClick={() => setIsNavActive(false)}>About Us</NavLink>
+              <NavLink to="/about-us" onClick={() => setIsNavActive(false)}>
+                About Us
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/contact-us" onClick={() => setIsNavActive(false)}>Contact Us</NavLink>
+              <NavLink to="/contact-us" onClick={() => setIsNavActive(false)}>
+                Contact Us
+              </NavLink>
             </li>
           </ul>
         </li>
