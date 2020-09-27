@@ -32,7 +32,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="footer__bottom">Copyright Koinstreet</div>
+      <div className="footer__bottom">Copyright @Koinstreet</div>
     </Fragment>
   );
 };
