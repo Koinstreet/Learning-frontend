@@ -173,7 +173,7 @@
 }
 
 .footer {
-  background-color: #072626;
+  background-color: darken($color-secondary-light, 5);
   padding: 3rem 0;
   margin-top: 5rem;
 
@@ -211,6 +211,6 @@
     color: #fff;
     text-align: center;
     padding: 1rem;
-    background-color: #031616;
+    background-color: $color-secondary;
   }
 }
