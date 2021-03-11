@@ -10,6 +10,7 @@ const headers = () => ({
 export const getCoursesService = async () => {
   try {
     const data = await Axios.get(COURSE_URL);
+    console.log(data)
     return data;
   } catch (err) {
     console.log(err);

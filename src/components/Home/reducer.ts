@@ -10,7 +10,7 @@ const INITIAL_STATE = {
 };
 
 interface CourseType {
-  id: number;
+  _id: number;
 }
 
 export default (state = INITIAL_STATE, { type, payload }: IAction): object => {
@@ -26,7 +26,7 @@ export default (state = INITIAL_STATE, { type, payload }: IAction): object => {
       return { ...state, courses: newCourse };
     }
     case "DELETE_COURSE_SUCCESS": {
-      const newCourse = state.courses.filter((el: CourseType) => el.id !== payload.id)
+      const newCourse = state.courses.filter((el: CourseType) => el._id !== payload.id)
       return { ...state, courses: newCourse };
     }
     default:

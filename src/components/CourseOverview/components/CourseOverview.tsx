@@ -18,9 +18,9 @@ const CourseOverview = (props) => {
   const dispatch = useDispatch();
   const { course, loading } = useSelector((state) => state.currentCourse);
   useEffect(() => {
-    console.log(data)
-    dispatch(getCourseAction(parseInt(props.match.params.id)));
-    dispatch(getModulesAction(parseInt(props.match.params.id)));
+    console.log(props.match.params)
+    dispatch(getCourseAction(props.match.params.id));
+    dispatch(getModulesAction(props.match.params.id));
   }, [dispatch, props.match.params.id]);
 
   return (

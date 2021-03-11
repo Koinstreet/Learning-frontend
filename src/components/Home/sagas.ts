@@ -11,7 +11,7 @@ function* getAllCourses() {
       const res = yield call(getCoursesService);
       if(res.status === 200) {
         console.log(res.data.data)
-        yield put(getAllCoursesSuccessAction(res.data.data.courses));
+        yield put(getAllCoursesSuccessAction(res.data.data));
       }
     } catch(err) {
       console.log(err)
@@ -26,7 +26,7 @@ function* getAdminCourses() {
       const res = yield call(getAdminCourseService);
       if(res.status === 200) {
         console.log(res.data.data)
-        yield put(getAllCoursesSuccessAction(res.data.data.courses));
+        yield put(getAllCoursesSuccessAction(res.data.data));
       }
     } catch(err) {
       console.log(err)

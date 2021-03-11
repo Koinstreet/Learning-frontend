@@ -20,7 +20,7 @@ function* getCourse(id) {
     const res = yield call(getCourseData, id);
     console.log(res)
     if(res.status === "success") {
-      yield put(getCourseSuccessAction(res.data.course));
+      yield put(getCourseSuccessAction(res.data));
     }
   } catch (err) {
     console.log(err);
@@ -37,7 +37,7 @@ function* getViewedCourse() {
     const res = yield call(getViewedCourses);
     console.log(res)
     if(res.status === 200) {
-      yield put(getViewedCoursesSuccess(res.courses));
+      yield put(getViewedCoursesSuccess(res.data.data));
     }
   } catch (err) {
     console.log(err);

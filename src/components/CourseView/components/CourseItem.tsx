@@ -12,19 +12,18 @@ const CourseItem = (props) => {
   const { module, modules } = useSelector((state) => state.courseModules);
   const { course } = useSelector((state) => state.currentCourse);
 
+  console.log(props)
+
+
   useEffect(() => {
     if (module) {
       const moduleLength = modules.length;
       const moduleIndex = modules.findIndex(
-        (el) => el.moduleId === props.moduleId
+        (el) => el._id === props.moduleId
       );
-      console.log(moduleLength, moduleIndex, "here");
-      console.log(modules);
-      console.log(module)
-
       if (moduleIndex !== -1 && moduleIndex < moduleLength - 1) {
         const text = `/course/${props.courseId}/${
-          modules[moduleIndex + 1].moduleId
+          modules[moduleIndex + 1]._id
         }`;
         setLink(text);
       }

@@ -17,5 +17,5 @@ export const getViewedCourses = async () => {
     url: `${COURSE_URL}/user/viewed`,
     headers: headers(),
   });
-  return res.data;
+  return res;
 };

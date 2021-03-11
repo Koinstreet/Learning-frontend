@@ -31,9 +31,12 @@ function* getModules(courseId) {
   yield put(startLoadingModule());
   yield put(showLoading());
   try {
+    console.log(courseId)
     const res = yield call(getModulesService, courseId);
     if(res.status === "success") {
-      yield put(getModulesSuccess(res.data.modules))
+      console.log(courseId)
+      console.log(res.data)
+      yield put(getModulesSuccess(res.data))
       yield put(stopLoadingModule());
       yield put(hideLoading());
     }

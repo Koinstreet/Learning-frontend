@@ -27,14 +27,14 @@ export default (state = INITIAL_STATE, { type, payload }: IAction): object => {
     case GET_MODULES_FAILED:
         return { ...state, loading: false}
     case "DELETE_COURSE_MODULE_SUCCESS":
-      const newModule = state.modules.filter(el => el.id !== payload.id);
+      const newModule = state.modules.filter(el => el._id !== payload.id);
       return { ...state, modules: newModule}
     case "CREATE_COURSE_MODULE_SUCCESS":
       const savedModule = [{...payload.data}, ...state.modules];
       return { ...state, modules: savedModule}
     case "EDIT_COURSE_MODULE_SUCCESS":
       const editedModule = [...state.modules];
-      const index = editedModule.findIndex(el => el.id === payload.data.id)
+      const index = editedModule.findIndex(el => el._id === payload.data._id)
       editedModule[index] = payload.data;
       return { ...state, modules: editedModule}
     default:

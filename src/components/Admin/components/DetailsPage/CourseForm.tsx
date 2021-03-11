@@ -51,15 +51,15 @@ const CourseModal = (props) => {
     const fieldsValue = form.getFieldsValue();
     if (fieldsValue.published === undefined) fieldsValue.published = false;
     if (fieldsValue.objectives === undefined) {
-      fieldsValue.objectives = JSON.stringify([]);
+      fieldsValue.objectives = [];
     } else {
-      fieldsValue.objectives = JSON.stringify(fieldsValue.objectives);
+      fieldsValue.objectives = fieldsValue.objectives;
     }
     fieldsValue.image = courseImage;
     setLoading(true);
     dispatch(
       editCourseAction(
-        props.course.id,
+        props.course._id,
         fieldsValue,
         () => {
           setLoading(false);

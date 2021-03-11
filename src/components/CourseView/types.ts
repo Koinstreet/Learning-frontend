@@ -10,7 +10,7 @@ export interface IGetModule {
 }
 
 interface IModule {
-  id: string
+  _id: string
 }
 
 export interface ReducerInterface {

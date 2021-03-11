@@ -44,8 +44,8 @@ const CourseDetails = (props) => {
   const { course, loading } = useSelector((state) => state.currentCourse);
   const courseModules = useSelector((state) => state.courseModules);
   useEffect(() => {
-    dispatch(getCourseAction(parseInt(props.match.params.id)));
-    dispatch(getModulesAction(parseInt(props.match.params.id)));
+    dispatch(getCourseAction(props.match.params.id));
+    dispatch(getModulesAction(props.match.params.id));
   }, [dispatch, props.match.params.id]);
 
   const showModuleModal = () => {

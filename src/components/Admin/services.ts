@@ -13,7 +13,7 @@ export const createCourseService = async (data) => {
       headers: headers(),
       data
     })
-    return response.data;
+    return response;
   } catch (err) {
     console.log("service", err);
     throw new Error(err);
@@ -27,7 +27,7 @@ export const deleteCourseService = async (id) => {
       url: `${COURSE_URL}/${id}`,
       headers: headers(),
     })
-    return response.data;
+    return response;
   } catch (err) {
     console.log("service", err);
     throw new Error(err);
@@ -41,8 +41,8 @@ export const editCourseService = async (id, data) => {
       url: `${COURSE_URL}/${id}`,
       headers: headers(),
       data
-    })
-    return response.data;
+    });
+    return response;
   } catch (err) {
     console.log("service", err);
     throw new Error(err);
@@ -56,8 +56,8 @@ export const createModuleService = async (id, data) => {
       url: `${COURSE_URL}/${id}/module`,
       headers: headers(),
       data
-    })
-    return response.data;
+    });
+    return response;
   } catch (err) {
     console.log("service", err);
     throw new Error(err);
@@ -71,7 +71,7 @@ export const deleteModuleService = async (moduleId, courseId) => {
       url: `${COURSE_URL}/${courseId}/module/${moduleId}`,
       headers: headers(),
     })
-    return response.data;
+    return response;
   } catch (err) {
     console.log("service", err);
     throw new Error(err);
@@ -86,7 +86,7 @@ export const editModuleService = async (moduleId, courseId, data) => {
       headers: headers(),
       data
     })
-    return response.data;
+    return response;
   } catch (err) {
     console.log("service", err);
     throw new Error(err);

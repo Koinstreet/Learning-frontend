@@ -23,9 +23,9 @@ const CourseView = (props) => {
       setCourseId(courseId);
       setModuleId(moduleId);
       console.log(courseId, moduleId)
-      dispatch(actions.getCourseAction(parseInt(courseId)));
-      dispatch(getModulesAction(parseInt(courseId)));
-      dispatch(getCourseModuleAction(parseInt(courseId), moduleId));
+      dispatch(actions.getCourseAction(courseId));
+      dispatch(getModulesAction(courseId));
+      dispatch(getCourseModuleAction(courseId, moduleId));
     }
   }, [dispatch, props.match.params]);
   return (

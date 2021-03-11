@@ -13,12 +13,19 @@ function* createCourse(data, success) {
   try {
     const formData = new FormData();
     Object.keys(data).map(el => {
-      formData.append(el, data[el])
+      if(Array.isArray(data[el])) {
+        const newArr = data[el];
+        newArr.map(newEl => {
+          formData.append(el, newEl)
+        })
+      } else {
+        formData.append(el, data[el])
+      }
     })
-    const res = yield call(createCourseService, formData)
+    const res = yield call(createCourseService, formData);
     if(res.status === 201) {
-      yield put(createCourseFinishedAction(res.data.course, null));
-      success(res.data.course.id);
+      yield put(createCourseFinishedAction(res.data.data, null));
+      success(res.data.data._id);
     }
   } catch (err) {
     yield put(createCourseFinishedAction(null, err));
@@ -30,6 +37,7 @@ function* deleteCourse(id, resolve, reject) {
   try {
     // return setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
     const res = yield call(deleteCourseService, id);
+    console.log(res)
     if(res.status === 200) {
       yield put(deleteCourseSuccess(id));
       message.success("Course deleted succesfully");
@@ -46,11 +54,19 @@ function* editCourse(id, data, success, error) {
   try {
     const formData = new FormData();
     Object.keys(data).map(el => {
-      formData.append(el, data[el])
+      if(Array.isArray(data[el])) {
+        const newArr = data[el];
+        newArr.map(newEl => {
+          formData.append(el, newEl)
+        })
+      } else {
+        formData.append(el, data[el])
+      }
     })
     const res = yield call(editCourseService, id, formData);
     if(res.status === 200) {
-      yield put(getCourseSuccessAction(res.data.course[1][0]));
+      console.log(res)
+      yield put(getCourseSuccessAction(res.data.data));
       success();
     }
   } catch(err) {
@@ -62,12 +78,11 @@ function* editCourse(id, data, success, error) {
 
 function* createModule(id, data, success, error) {
   try {
-    console.log("suss")
     const res = yield call(createModuleService, id, data);
     console.log(res)
-    if(res.status === "success") {
+    if(res.status === 201) {
       console.log("res")
-      yield put(createModuleSuccess(res.data.module))
+      yield put(createModuleSuccess(res.data.data))
       success();
     }
 
@@ -81,8 +96,9 @@ function* deleteModule(moduleId, courseId, resolve, reject) {
   console.log(moduleId, courseId)
   try {
     const res = yield call(deleteModuleService, moduleId, courseId);
-    console.log(res)
+    console.log(res.status)
     if(res.status === 200) {
+      console.log("yesssssss")
       yield put(deleteModuleSuccess(moduleId))
       message.success("Module deleted succesfully");
       return resolve();
@@ -96,12 +112,12 @@ function* deleteModule(moduleId, courseId, resolve, reject) {
 }
 
 function* editModule(moduleId, courseId, data, success, error) {
-  console.log(moduleId, courseId, data)
   try {
     const res = yield call(editModuleService, moduleId, courseId, data);
-    if(res.status === "success") {
-      console.log(res.data.module[1][0])
-      yield put(editModuleSuccess(res.data.module[1][0]))
+    if(res.status === 200) {
+      console.log(moduleId, courseId, data);
+      console.log(res.data.data)
+      yield put(editModuleSuccess(res.data.data))
       success();
     }
 

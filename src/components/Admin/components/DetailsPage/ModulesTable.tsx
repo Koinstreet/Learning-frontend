@@ -44,7 +44,7 @@ const ModuleActions = ({text, data}) => {
   const dispatch = useDispatch();
 
   const onDeleteModule = (resolve, reject) => {
-    return dispatch(deleteModuleAction(data.id, data.courseId, resolve, reject))
+    return dispatch(deleteModuleAction(data._id, data.courseId, resolve, reject))
   };
 
   const showModuleModal = () => {
@@ -66,9 +66,9 @@ const ModuleActions = ({text, data}) => {
 
   function confirm() {
     Modal.confirm({
-      title: "Delete Course?",
+      title: "Delete Module?",
       icon: <ExclamationCircleOutlined />,
-      content: "Course created successfully, Add Modules now ?",
+      content: "Are you sure ?",
       okText: "Yes",
       onOk() {
         return new Promise((resolve, reject) => {

@@ -88,7 +88,7 @@ const columns = [
     width: 100,
     render: (data: any) => {
       return (
-        <Popover content={() => <Content id={data.id} />} trigger="click">
+        <Popover content={() => <Content id={data._id} />} trigger="click">
           <EyeOutlined style={{ color: "#1890ff" }} />
         </Popover>
       );

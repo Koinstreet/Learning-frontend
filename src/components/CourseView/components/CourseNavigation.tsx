@@ -28,12 +28,12 @@ const CourseNavigation = () => {
       <ul className={`${isNavActive ? "--active" : ""}`}>
         {modules
           ? modules.map((el) => (
-              <li key={el.id}>
+              <li key={el._id}>
                 <Link
-                  to={`/course/${el.courseId}/${el.moduleId}`}
+                  to={`/course/${el.courseId}/${el._id}`}
                   // className={`course-section__navigation`}
                   className={`course-section__navigation ${
-                    viewed.indexOf(el.moduleId) === -1 ? null : "--viewed"
+                    viewed.indexOf(el._id) === -1 ? null : "--viewed"
                   }`}
                   onClick={toggleNavActive}
                 >

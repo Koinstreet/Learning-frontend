@@ -11,14 +11,14 @@ const Courses: React.FC = () => {
           title="Free courses to grow your skills"
           courses={courses}
         />
-        <CourseSection
+        {/* <CourseSection
           title="Courses about Crypto"
           courses={courses}
         />
         <CourseSection
           title="Courses about tech"
           courses={courses}
-        />
+        /> */}
       </div>
     </section>
   );

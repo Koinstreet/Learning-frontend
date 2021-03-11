@@ -8,6 +8,10 @@
   flex-direction: column;
   background: #ffffff;
   margin: 0 auto;
+  @media only screen and (max-width: 480px) {
+    width: 80%;
+    height: 36rem;
+  }
 
   &__body {
     flex: 1 1;
@@ -45,4 +49,8 @@
     text-transform: uppercase;
     border-radius: 3px;
   }
+}
+
+.react-multi-carousel-list {
+  padding-left: 2px;
 }

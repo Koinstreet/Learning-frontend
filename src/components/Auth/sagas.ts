@@ -9,8 +9,8 @@ import setAuthData from "../../utils/setAuthData";
 function* signupUser(data) {
   try {
     yield put(authLoading());
-    const { token } = yield call(signupService, data);
-    const decoded = setAuthData(token);
+    const res = yield call(signupService, data);
+    const decoded = setAuthData(res.data.token);
     yield put(authSuccess(decoded));
     window.location.href = '/';
   } catch (err) {
@@ -22,9 +22,9 @@ function* signupUser(data) {
 function* signinUser(data) {
   try {
     yield put(authLoading());
-    console.log(data)
-    const { token } = yield call(signinService, data);
-    const decoded = setAuthData(token);
+    const res = yield call(signinService, data);
+    console.log(res)
+    const decoded = setAuthData(res.data.token);
     yield put(authSuccess(decoded));
     if (decoded.role === "admin") {
       window.location.href = '/admin/dashboard';

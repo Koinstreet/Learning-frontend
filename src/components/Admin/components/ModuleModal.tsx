@@ -343,7 +343,7 @@ class ModuleModal extends Component<Props, State> {
 
     if (this.props.edit) {
       this.props.editModule(
-        this.props.module.id,
+        this.props.module._id,
         this.props.module.courseId,
         data,
         () => {

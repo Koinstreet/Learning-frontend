@@ -57,14 +57,14 @@ const TopSection = () => {
     <div className="overview-top">
       {course && !loading && !modules.loading && (
         <SectionInfo
-          id={course.id}
+          id={course._id}
           courseName={course.name}
-          authorName={`${course.author.firstName} ${course.author.lastName}`}
+          authorName={`${course.authorId.firstName} ${course.authorId.lastName}`}
           overview={course.overview}
           // authorImg={``}
           students={0}
           videoLink={link.current}
-          courseIntroId={modules.length > 0 ? modules[0].moduleId : ""}
+          courseIntroId={modules.length > 0 ? modules[0]._id : ""}
         />
       )}
     </div>
