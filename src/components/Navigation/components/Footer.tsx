@@ -24,9 +24,15 @@ const Footer = () => {
             </li>
             <li className="col-3 footer__item">
               <span className="socials">
+                <a href="https://www.facebook.com/KoinStreetOfficial/">
                 <img src={facebook} alt="facebook" />
+                </a>
+                <a href="https://twitter.com/KoinStreet">
                 <img src={twitter} alt="twitter" />
+                </a>
+                <a href="https://www.instagram.com/koinstreet/">
                 <img src={instagram} alt="instagram" />
+                </a>
               </span>
             </li>
           </ul>
