@@ -1,8 +1,10 @@
 import React, { useEffect, useState, Fragment } from "react";
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
-import { UserOutlined } from "@ant-design/icons";
+import { NavLink, Link } from "react-router-dom";
+import { UserOutlined, LogoutOutlined } from "@ant-design/icons";
 import { Slider } from "react-burgers";
+import { actions } from "../../Auth"
+import store from "../../../redux/store"
 
 import logo from "../../../assets/images/logo.png";
 import cancel from "../../../assets/icons/cancel.svg";
@@ -28,15 +30,29 @@ const Navigation: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
+  const logoutUser = () => {
+    localStorage.removeItem("jwtToken");
+    store.dispatch(actions.authSuccess({}));
+    window.location.href = "/";
+  }
+
   const authLinks = () => {
     if (isAuthenticated) {
       return (
+        <Fragment>
         <li>
           <NavLink to="/dashboard">
             <UserOutlined style={{ fontSize: 20 }} />{" "}
             <span className="pl-3">User</span>
           </NavLink>
         </li>
+        <ul>
+        <Link to="/" onClick={() => logoutUser()}>
+          <LogoutOutlined style={{ fontSize: 20 }} />{" "}
+          <span className="pl-3">Lognout</span>
+        </Link>
+      </ul>
+      </Fragment>
       );
     } else {
       return (

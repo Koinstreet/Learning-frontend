@@ -5,7 +5,8 @@ import CourseSection from "./CourseSection";
 const Courses: React.FC = () => {
   const {courses} = useSelector(state => state.allCourses);
   return (
-    <section className="all-courses">
+    <section className="all-courses" id="course-selection"
+    >
       <div className="container">
         <CourseSection
           title="Free courses to grow your skills"

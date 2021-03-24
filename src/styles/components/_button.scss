@@ -24,3 +24,30 @@
     margin-left: 1.5rem;
   }
 }
+
+.return-courses-button {
+  background: $color-secondary;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem 1.5rem;
+  display: inline-block;
+  border: #ffffff solid 1px;
+  transition: background 0.3s;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background: darken($color: $color-primary, $amount: 8);
+  }
+
+  svg {
+    margin-left: 1.5rem;
+  }
+}
