@@ -53,7 +53,7 @@ const Landing: React.FC = () => {
 
               <form className="landing__form">
                 {/* <input placeholder="you@email.com" /> */}
-                <Link to="/about" className="button">
+                <Link to="/about-us" className="button">
                   LEARN MORE
                   <RightArrow />
                 </Link>

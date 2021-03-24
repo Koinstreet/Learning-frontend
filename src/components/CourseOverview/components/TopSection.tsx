@@ -10,7 +10,10 @@ import userImg from "../../../assets/images/face.png";
 
 const SectionInfo = (props) => {
   return (
-    <div className="container h-100">
+    <div className="container h-100 mt-5">
+       <Link to={`/#course-selection`} className="return-courses-button mt-5">
+              RETURN TO COURSES
+            </Link>
       <div className="row h-100 align-items-center pt-5">
         <div className="col-md-6 py-5">
           <div className="h-100">
