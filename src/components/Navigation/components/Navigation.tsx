@@ -49,7 +49,7 @@ const Navigation: React.FC = () => {
         <ul>
         <Link to="/" onClick={() => logoutUser()}>
           <LogoutOutlined style={{ fontSize: 20 }} />{" "}
-          <span className="pl-3">Lognout</span>
+          <span className="pl-3">Logout</span>
         </Link>
       </ul>
       </Fragment>

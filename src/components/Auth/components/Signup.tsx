@@ -32,6 +32,10 @@ const Signup = () => {
       value: "",
       entered: false,
     },
+    checkbox: {
+      value: "",
+      entered: false,
+    },
   });
 
   const dispatch = useDispatch();
@@ -49,7 +53,7 @@ const Signup = () => {
   const toggleConfirmPassType = () => {
     setConfirmPassType(confirmPassType === "password" ? "text" : "password");
   };
-
+  
   const onSubmit = (e) => {
     e.preventDefault();
     const data = {};
@@ -228,11 +232,31 @@ const Signup = () => {
               </div>
             </div>
           </div>
-          <p className="auth-page__confirmText">
-            By clicking this button, I agree to the{" "}
-            <span>Terms and Conditions</span> and the{" "}
-            <span>Privacy Policy</span>
-          </p>
+      <p className="auth-page__confirmText">
+          <input 
+            type="checkbox"
+            name="checkbox" 
+            id="agree" 
+            value={form["checkbox"].value}
+            className="mr-2"
+            required
+            onChange={onChange}
+            />
+                <label
+                className="auth-page__confirmText auth-page__input"
+                htmlFor="checkbox"
+                style={{
+                  color:
+                    form["checkbox"].entered && !form["checkbox"].value
+                    ? "#EB5757"
+                      : "",
+                  }}
+                  >
+                  I agree to the{" "}
+                  <span>Terms and Conditions</span> and the{" "}
+                  <span>Privacy Policy</span>
+                </label>
+      </p>
 
           <div className="row justify-content-between align-items-center mt-5">
             <div className="col">
